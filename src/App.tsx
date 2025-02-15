@@ -1,20 +1,15 @@
-import {
-	Popover,
-	PopoverContent,
-	PopoverTrigger,
-} from "./components/ui/popover";
-import { ThemeProvider } from "./components/ui/theme-provider";
+import { Header } from "@/components/header";
+import { ThemeProvider } from "@/components/ui/theme-provider";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
+const queryClient = new QueryClient();
 function App() {
 	return (
-		<ThemeProvider>
-			<Popover>
-				<PopoverTrigger>Open</PopoverTrigger>
-				<PopoverContent>
-					Place content for the popover here.
-				</PopoverContent>
-			</Popover>
-		</ThemeProvider>
+		<QueryClientProvider client={queryClient}>
+			<ThemeProvider>
+				<Header />
+			</ThemeProvider>
+		</QueryClientProvider>
 	);
 }
 
