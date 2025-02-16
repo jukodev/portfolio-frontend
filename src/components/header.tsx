@@ -15,7 +15,14 @@ export const Header = () => {
 	});
 	return (
 		<header className="bg-zinc-800 p-4 flex justify-between items-center">
-			<h1 className="text-2xl">Portfolio</h1>
+			<div className="flex items-center space-x-4">
+				<img
+					src="/favicon.svg"
+					alt="Portfolio"
+					className="w-10 h-10 rounded-full"
+				/>
+				<h1 className="text-2xl">Portfolio</h1>
+			</div>
 			<Popover>
 				<PopoverTrigger>
 					<Avatar>
