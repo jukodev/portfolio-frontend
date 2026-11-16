@@ -1,0 +1,6 @@
+node_modules*
+dist
+.git
+.design-rules
+.env*
+package-lock.pre-upgrade.json

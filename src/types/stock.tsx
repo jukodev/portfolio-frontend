@@ -18,6 +18,7 @@ export type Stock = {
 const sortButton = (column: Column<Stock, unknown>, title: string) => {
 	return (
 		<Button
+			className="px-2"
 			variant="ghost"
 			onClick={() =>
 				column.toggleSorting(column.getIsSorted() === "asc")
@@ -28,15 +29,20 @@ const sortButton = (column: Column<Stock, unknown>, title: string) => {
 	);
 };
 
+const euroCell = (value: number) => (
+	<div className="px-2"> {formatEuro(value)}</div>
+);
+
 export const stockColumns: ColumnDef<Stock>[] = [
 	{
 		accessorKey: "name",
 		header: ({ column }) => sortButton(column, "Wertpapier"),
+		cell: ({ row }) => <div className="px-2">{row.original.name}</div>,
 	},
 	{
 		accessorKey: "invest",
 		header: ({ column }) => sortButton(column, "Investition (€)"),
-		cell: ({ row }) => formatEuro(row.original.invest),
+		cell: ({ row }) => euroCell(row.original.invest),
 	},
 	{
 		accessorKey: "value",

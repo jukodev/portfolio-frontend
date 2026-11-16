@@ -19,9 +19,10 @@ export function formatEuro(value: number) {
 }
 
 export function formatPercent(value: number) {
-	return new Intl.NumberFormat("de-DE", {
-		style: "percent",
-		minimumFractionDigits: 2,
-		maximumFractionDigits: 2,
-	}).format(value);
+	console.log(value);
+	return (
+		value.toLocaleString("de-DE", {
+			minimumFractionDigits: 2,
+		}) + " %"
+	);
 }

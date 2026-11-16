@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+node_modules.pre-upgrade/
+package-lock.pre-upgrade.json
+public/ocr/*.js
+public/ocr/*.wasm
